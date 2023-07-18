@@ -1,16 +1,13 @@
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import styles from '../Styles/BooksList.css';
 
-function BookList(
-  {
-    booksData,
-  },
-) {
+function BooksList() {
+  const { bookList } = useSelector((store) => store.books);
   return (
     <ul className={styles.bookList}>
       {
-        booksData.map((item) => (
+        bookList.map((item) => (
           <Book
             key={item.id}
             bookData={item}
@@ -21,12 +18,4 @@ function BookList(
   );
 }
 
-BookList.defaultProps = {
-  booksData: [],
-};
-
-BookList.propTypes = {
-  booksData: PropTypes.instanceOf(Array),
-};
-
-export default BookList;
+export default BooksList;
