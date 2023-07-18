@@ -1,0 +1,32 @@
+article {
+  display: flex;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid gray;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bookTitle {
+  padding-left: 0;
+  margin: 0;
+}
+
+.bookCat {
+  margin: 0;
+}
+
+.buttonList {
+  padding-left: 0;
+}
