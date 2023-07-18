@@ -14,13 +14,15 @@ const booksSlice = createSlice({
       state.bookList.push({
         title: action.payload.title,
         author: action.payload.author,
-        id: uuidv4(),
+        item_id: uuidv4(),
       });
     },
     remove(state, action) {
       return {
         ...state,
-        bookList: state.bookList.filter((books) => books.id !== action.payload.books.id),
+        bookList: state.bookList.filter(
+          (books) => books.item_id !== action.payload.bookData.item_id,
+        ),
       };
     },
   },
