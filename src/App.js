@@ -1,10 +1,13 @@
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import RouterNav from './Router';
 
 function App() {
   return (
-    <Provider store={store} />
+    <Provider store={store}>
+      <RouterNav />
+    </Provider>
   );
 }
 
