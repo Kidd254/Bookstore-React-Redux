@@ -1,4 +1,5 @@
-import BooksLogic from './BooksLogic';
+import BookList from './Booklist';
+import NewBook from './NewBook';
 
 function Books() {
   return (
@@ -10,7 +11,10 @@ function Books() {
         alignItems: 'center',
       }}
       >
-        <BooksLogic />
+        <section style={{ display: 'flex', flexDirection: 'column' }}>
+          <BookList />
+          <NewBook />
+        </section>
       </div>
     </>
   );
