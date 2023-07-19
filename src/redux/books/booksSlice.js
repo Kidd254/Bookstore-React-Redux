@@ -56,4 +56,27 @@ const booksSlice = createSlice({
       };
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(getBooksFromApi.fulfilled, (state, { payload }) => {
+      const dataArray = [];
+      Object.keys(payload).forEach((key) => {
+        const properties = payload[key];
+        const dataObject = {
+          item_id: key,
+          title: properties[0].title,
+          author: properties[0].author,
+          category: properties[0].category,
+        };
+        dataArray.push(dataObject);
+      });
+      return {
+        ...state,
+        bookList: dataArray,
+      };
+    }).addCase(displayNewBook.fulfilled, ({ payload }) => payload)
+      .addCase(removeBook.fulfilled, ({ payload }) => payload);
+  },
 });
+export const { add, remove } = booksSlice.actions;
+
+export default booksSlice.reducer;
