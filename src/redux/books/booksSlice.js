@@ -6,7 +6,7 @@ const initialState = {
   bookList: [],
 };
 
-const getBooksFromApi = createAsyncThunk(
+export const getBooksFromApi = createAsyncThunk(
   'books/fetch books',
   async () => {
     const response = await axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/UDaNssZdUf6duW6ogyFa/books');
@@ -14,7 +14,7 @@ const getBooksFromApi = createAsyncThunk(
   },
 );
 
-const displayNewBook = createAsyncThunk(
+export const displayNewBook = createAsyncThunk(
   'books/ add new book',
   async (data) => {
     const bookDetails = data;
@@ -25,7 +25,7 @@ const displayNewBook = createAsyncThunk(
   },
 );
 
-const removeBook = createAsyncThunk(
+export const removeBook = createAsyncThunk(
   'books/ delete book from api',
   async (id) => {
     const bookDetails = {};
@@ -36,7 +36,7 @@ const removeBook = createAsyncThunk(
   },
 );
 
-const booksSlice = createSlice({
+export const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
