@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import styles from '../Styles/Book.css';
-import { remove } from '../redux/books/booksSlice';
+import { removeBook, getBooksFromApi } from '../redux/books/booksSlice';
 
 function Book({ bookData }) {
   const dispatch = useDispatch();
@@ -14,7 +14,18 @@ function Book({ bookData }) {
           <h4 className={styles.bookCat}>{bookData.author}</h4>
           <ul className={styles.buttonList}>
             <li>Comments</li>
-            <li><button type="button" onClick={() => dispatch(remove({ bookData }))}>Remove</button></li>
+            <li>
+              <button
+                type="button"
+                onClick={async () => {
+                  await dispatch(removeBook(bookData.item_id));
+                  await dispatch(getBooksFromApi());
+                }}
+              >
+                Remove
+              </button>
+
+            </li>
             <li>Edit</li>
           </ul>
         </div>

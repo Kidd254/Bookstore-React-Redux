@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { add } from '../redux/books/booksSlice';
+import { displayNewBook, getBooksFromApi } from '../redux/books/booksSlice';
 
 function NewBook() {
   const [title, setTitle] = useState('');
@@ -22,9 +22,10 @@ function NewBook() {
       <h4>ADD NEW BOOK</h4>
       <form
         className="form-container"
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          dispatch(add({ title, author }));
+          await dispatch(displayNewBook({ title, author }));
+          await dispatch(getBooksFromApi());
         }}
       >
         <input
