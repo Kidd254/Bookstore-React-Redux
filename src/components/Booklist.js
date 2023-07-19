@@ -9,8 +9,8 @@ function BooksList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getBooksFromApi);
-  });
+    dispatch(getBooksFromApi());
+  }, [dispatch]);
   return (
     <ul className={styles.bookList}>
       {
