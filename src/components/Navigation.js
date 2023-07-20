@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { BsFillPersonFill } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
-import styles from '../styles/Navigation.module.css';
+import styles from '../stylesF/Navigation.module.css';
 
 function Navbar() {
   return (

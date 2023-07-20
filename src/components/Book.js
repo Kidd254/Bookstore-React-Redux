@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { useDispatch } from 'react-redux';
-import styles from '../styles/Book.module.css';
+import styles from '../stylesF/Book.module.css';
 import { getBooksFromApi, displayNewBook } from '../redux/books/booksSlice';
 import 'react-circular-progressbar/dist/styles.css';
 
