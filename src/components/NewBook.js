@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { displayNewBook, getBooksFromApi } from '../redux/books/booksSlice';
-import styles from '../Styles/NewBook.css';
+import styles from '../styles/NewBook.module.css';
 
 function NewBook() {
   const [title, setTitle] = useState('');

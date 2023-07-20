@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { checkStatus } from '../redux/categories/categoriesSlice';
-import styles from '../Styles/Category.css';
+import styles from '../styles/Category.module.css';
 
 function Categories() {
   const { status } = useSelector((state) => state.categories);

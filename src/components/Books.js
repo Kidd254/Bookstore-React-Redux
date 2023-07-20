@@ -1,6 +1,6 @@
 import BookList from './Booklist';
 import NewBook from './NewBook';
-import styles from '../Styles/Books.module.css';
+import styles from '../styles/Books.module.css';
 
 function Books() {
   return (
