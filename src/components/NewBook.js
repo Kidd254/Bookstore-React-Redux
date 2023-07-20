@@ -32,7 +32,7 @@ function NewBook() {
         <input
           type="text"
           placeholder="Book title"
-          className={styles.input}
+          className={styles.input1}
           value={title}
           onChange={(e) => handleTitle(e)}
         />
