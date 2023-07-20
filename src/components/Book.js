@@ -1,45 +1,76 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import { useState } from 'react';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { useDispatch } from 'react-redux';
-import styles from '../Styles/Book.css';
-import { removeBook, getBooksFromApi } from '../redux/books/booksSlice';
+import styles from '../stylesF/Book.module.css';
+import { getBooksFromApi, displayNewBook } from '../redux/books/booksSlice';
+import 'react-circular-progressbar/dist/styles.css';
 
 function Book({ bookData }) {
   const dispatch = useDispatch();
+  const percent = useState(Math.floor(Math.random() * 100));
   return (
     <>
       <article className={styles.article}>
         <div className={styles.mainContent}>
-          <h4 className={styles.bookCat}>Novel</h4>
+          <h4 className={styles.category}>{bookData.category}</h4>
           <h2 className={styles.bookTitle}>{bookData.title}</h2>
-          <h4 className={styles.bookCat}>{bookData.author}</h4>
+          <h4 className={styles.bookAuthor}>{bookData.author}</h4>
           <ul className={styles.buttonList}>
-            <li>Comments</li>
+            <li>
+              <button className={styles.btnMenu} type="button">
+                Comments
+              </button>
+            </li>
+            <div className={styles.divider}> </div>
             <li>
               <button
+                className={styles.btnMenu}
                 type="button"
                 onClick={async () => {
-                  await dispatch(removeBook(bookData.item_id));
+                  await dispatch(displayNewBook(bookData.item_id));
                   await dispatch(getBooksFromApi());
                 }}
               >
                 Remove
               </button>
-
             </li>
-            <li>Edit</li>
+            <div className={styles.divider}> </div>
+            <li>
+              <button className={styles.btnMenu} type="button">
+                Edit
+              </button>
+            </li>
           </ul>
         </div>
-        <div>
-          <div>Circle</div>
-          <div>
-            <h2>{bookData.percent}</h2>
-            <h4 className={styles.bookCat}>{bookData.status}</h4>
+        <div className={styles.allProgress}>
+          <div className={styles.percentContainer}>
+            <div className={styles.progressBar}>
+              <CircularProgressbar
+                value={percent[0]}
+                strokeWidth={6}
+                styles={buildStyles({
+                  strokeLinecap: 'butt',
+                  trailColor: '#e8e8e8',
+                })}
+              />
+            </div>
+            <div className={styles.percentTextContainer}>
+              <div className={styles.percentText}>
+                {percent[0]}
+                %
+              </div>
+              <div className={styles.percentStatus}>Completed</div>
+            </div>
           </div>
-        </div>
-        <div>
-          <h3>Current chapter</h3>
-          <h3>{bookData.lastChapter}</h3>
-          <button type="button">Update progress</button>
+          <div className={styles.progressDivider}> </div>
+          <div className={styles.currentChapterContainer}>
+            <div className={styles.chapterLabel}>Current chapter</div>
+            <div className={styles.chapter}>Random chapter: This is random</div>
+            <button className={styles.primaryButton} type="button">Update progress</button>
+          </div>
         </div>
       </article>
     </>

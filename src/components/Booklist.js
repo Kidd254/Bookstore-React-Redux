@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Book from './Book';
 import { getBooksFromApi } from '../redux/books/booksSlice';
-import styles from '../Styles/BooksList.css';
+import styles from '../stylesF/BooksList.module.css';
 
 function BooksList() {
   const { bookList } = useSelector((store) => store.books);
@@ -12,7 +12,7 @@ function BooksList() {
     dispatch(getBooksFromApi());
   }, [dispatch]);
   return (
-    <ul className={styles.bookList}>
+    <span className={styles.bookList}>
       {
         bookList.map((item) => (
           <Book
@@ -21,7 +21,7 @@ function BooksList() {
           />
         ))
       }
-    </ul>
+    </span>
   );
 }
 

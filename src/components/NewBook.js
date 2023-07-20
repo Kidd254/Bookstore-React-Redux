@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { displayNewBook, getBooksFromApi } from '../redux/books/booksSlice';
+import styles from '../stylesF/NewBook.module.css';
 
 function NewBook() {
   const [title, setTitle] = useState('');
@@ -14,14 +15,14 @@ function NewBook() {
   };
 
   const handleAuthor = (e) => {
-    e.preventDefault();
     setAuthor(e.target.value);
   };
+
   return (
     <>
-      <h4>ADD NEW BOOK</h4>
+      <div className={styles.formTitle}>ADD NEW BOOK</div>
       <form
-        className="form-container"
+        className={styles.formContainer}
         onSubmit={async (e) => {
           e.preventDefault();
           await dispatch(displayNewBook({ title, author }));
@@ -31,18 +32,18 @@ function NewBook() {
         <input
           type="text"
           placeholder="Book title"
-          className="input-text"
+          className={styles.input1}
           value={title}
-          onChange={(e) => { handleTitle(e); }}
+          onChange={(e) => handleTitle(e)}
         />
         <input
           type="text"
           placeholder="Author name"
-          className="input-text"
+          className={styles.input}
           value={author}
-          onChange={(e) => { handleAuthor(e); }}
+          onChange={(e) => handleAuthor(e)}
         />
-        <button className="input-submit" type="submit">
+        <button className={styles.primaryBtnBig} type="submit">
           Add Book
         </button>
       </form>
