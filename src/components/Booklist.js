@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Book from './Book';
 import { getBooksFromApi } from '../redux/books/booksSlice';
-import styles from '../Styles/BooksList.css';
+import styles from '../Styles/BooksList.module.css';
 
 function BooksList() {
   const { bookList } = useSelector((store) => store.books);

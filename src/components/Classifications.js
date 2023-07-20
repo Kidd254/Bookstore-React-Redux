@@ -1,4 +1,4 @@
-import styles from '../Styles/Category.css';
+import styles from '../Styles/Category.module.css';
 
 function Categories() {
   return (
