@@ -19,3 +19,18 @@ p {
   padding: 0 60px;
   text-align: justify;
 }
+
+.primaryBtnBig {
+  cursor: pointer;
+  width: 20%;
+  padding: 12px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-size: 0.813rem;
+  font-weight: 700;
+  font-family: 'Roboto-Slab', serif;
+  text-transform: uppercase;
+}
