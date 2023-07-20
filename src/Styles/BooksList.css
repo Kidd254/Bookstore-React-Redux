@@ -13,6 +13,7 @@ span {
   display: flex;
   justify-content: space-between;
 }
+
 .horizontalDivider {
   height: 0.125rem;
   background-color: #e8e8e8;
