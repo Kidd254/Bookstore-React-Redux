@@ -12,7 +12,7 @@ function BooksList() {
     dispatch(getBooksFromApi());
   }, [dispatch]);
   return (
-    <ul className={styles.bookList}>
+    <span className={styles.bookList}>
       {
         bookList.map((item) => (
           <Book
@@ -21,7 +21,7 @@ function BooksList() {
           />
         ))
       }
-    </ul>
+    </span>
   );
 }
 
