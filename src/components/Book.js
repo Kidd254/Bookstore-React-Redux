@@ -13,7 +13,7 @@ function Book({ bookData }) {
   const percent = useState(Math.floor(Math.random() * 100));
   return (
     <>
-      <article className={styles.article}>
+      < react-article className={styles.article}>
         <div className={styles.mainContent}>
           <h4 className={styles.category}>{bookData.category}</h4>
           <h2 className={styles.bookTitle}>{bookData.title}</h2>
