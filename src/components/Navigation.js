@@ -5,9 +5,9 @@ import styles from '../stylesF/Navigation.module.css';
 
 function Navbar() {
   return (
-    <nav className={styles.nav}>
-      <div className={styles.left}>
-        <h1 className={styles.h1}>Bookstore CMS</h1>
+    <nav className="">
+      <div className="">
+        <h1 className="">Bookstore CMS</h1>
         <ul className={styles.ul}>
           <li className={styles.li}>
             <NavLink
@@ -33,12 +33,9 @@ function Navbar() {
           </li>
         </ul>
       </div>
-      <div className={styles.rigth}>
+      <div className="">
         <div className={styles.iconBtn}>
-          <BsFillPersonFill
-            color="#0290ff"
-            size={22}
-          />
+          <BsFillPersonFill color="#0290ff" size={22} />
         </div>
       </div>
     </nav>
