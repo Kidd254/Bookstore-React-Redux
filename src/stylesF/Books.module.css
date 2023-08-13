@@ -5,3 +5,9 @@
   margin: 2.5rem 0 1.813rem;
   padding-bottom: 20px;
 }
+
+.background {
+  background-image: url(../assets/Images/wallpaperflare.com_wallpaper\(9\).jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
