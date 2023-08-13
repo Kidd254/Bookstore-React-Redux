@@ -1,10 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable comma-dangle */
 /* eslint-disable no-unused-vars */
-/* eslint-disable import/no-extraneous-dependencies */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { useDispatch } from 'react-redux';
 import styles from '../stylesF/Book.module.css';
