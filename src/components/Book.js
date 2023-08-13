@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { useDispatch } from 'react-redux';
 import styles from '../stylesF/Book.module.css';
-import { getBooksFromApi, displayNewBook } from '../redux/books/booksSlice';
+import { getBooksFromApi, removeBook } from '../redux/books/booksSlice';
 import 'react-circular-progressbar/dist/styles.css';
 
 function Book({ bookData }) {
@@ -15,7 +15,7 @@ function Book({ bookData }) {
   return (
     <>
       <div
-        className={`row d-flex justify-content-start align-items-center border border-#e8e8e8; mb-4 rounded-4 pt-2 pb-2 ${styles.article}`}
+        className={`row d-flex justify-content-start align-items-center border border-#e8e8e8; mb-4 bg-white rounded-4 pt-3 pb-3 ${styles.article}`}
       >
         <div className={`col-md-5 ${styles.mainContent}`}>
           <h4 className={styles.category}>{bookData.category}</h4>
@@ -33,7 +33,7 @@ function Book({ bookData }) {
                 className={styles.btnMenu}
                 type="button"
                 onClick={async () => {
-                  await dispatch(displayNewBook(bookData.item_id));
+                  await dispatch(removeBook(bookData.item_id));
                   await dispatch(getBooksFromApi());
                 }}
               >
@@ -69,7 +69,6 @@ function Book({ bookData }) {
             </div>
             <div className={styles.progressDivider}> </div>
           </div>
-
         </div>
 
         <div className="col-md-4">
