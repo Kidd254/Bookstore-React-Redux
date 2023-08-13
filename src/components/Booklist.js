@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Book from './Book';
@@ -12,15 +13,10 @@ function BooksList() {
     dispatch(getBooksFromApi());
   }, [dispatch]);
   return (
-    <span className={styles.bookList}>
-      {
-        bookList.map((item) => (
-          <Book
-            key={item.item_id}
-            bookData={item}
-          />
-        ))
-      }
+    <span className="col-md-10">
+      {bookList.map((item) => (
+        <Book key={item.item_id} bookData={item} />
+      ))}
     </span>
   );
 }

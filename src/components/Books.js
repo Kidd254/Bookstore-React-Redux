@@ -5,24 +5,12 @@ import styles from '../stylesF/Books.module.css';
 function Books() {
   return (
     <>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        columnGap: '20px',
-      }}
-      >
-        <section style={{
-          display: 'flex',
-          flexDirection: 'column',
-          padding: '30px',
-        }}
-        >
+      <div className="container">
+        <div className="d-flex flex-column justify-content-center align-items-center p-5">
           <BookList />
           <div className={styles.horizontalDivider}> </div>
           <NewBook />
-        </section>
+        </div>
       </div>
     </>
   );
